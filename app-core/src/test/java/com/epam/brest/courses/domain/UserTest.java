@@ -19,14 +19,13 @@ public class UserTest {
     public void testGetUserName() throws Exception {
 
         user.setUserName("User Name");
-        Assert.assertEquals("User Name", user.getUserName());
+        assertEquals("User Name", user.getUserName());
     }
 
     @Test
     public void testGetLogin() throws Exception {
 
         user.setLogin("User login");
-        Assert.assertEquals("User login", user.getLogin());
+        assertEquals("User login", user.getLogin());
     }
-
 }
