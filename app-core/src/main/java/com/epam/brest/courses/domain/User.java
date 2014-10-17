@@ -2,10 +2,6 @@ package com.epam.brest.courses.domain;
 
 public class User{
 
-    /**
-     * test
-     */
-	
 	private long userId;
 
 	private String login;
