@@ -8,6 +8,7 @@
 
     <modules>
         <module>app-core</module>
+        <module>app-dao</module>
     </modules>
 
     <properties>
@@ -16,6 +17,18 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>app-core</artifactId>
+                <version>${project.version}}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>app-dao</artifactId>
+                <version>${project.version}}</version>
+            </dependency>
+
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
