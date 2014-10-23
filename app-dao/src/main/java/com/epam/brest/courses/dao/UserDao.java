@@ -1,4 +1,5 @@
-package com.epam.brest.courses;
+package com.epam.brest.courses.dao;
+
 import com.epam.brest.courses.domain.User;
 import java.util.List;
 
@@ -9,5 +10,9 @@ public interface UserDao {
     public List<User> getUsers();
 
     public void removeUser(Long user);
+
+    public User getUserById();
+
+    public User getUserByLogin();
 
 }

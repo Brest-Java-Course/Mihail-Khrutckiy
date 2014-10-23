@@ -23,8 +23,13 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="app-core" />
+        <module name="app-dao" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="app-core" target="1.6" />
+      <module name="app-dao" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 
