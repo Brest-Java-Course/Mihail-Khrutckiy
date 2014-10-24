@@ -28,7 +28,24 @@ public class User{
         return userName;
     }
 
+    public User(){}
+
+    public User(Long userId, String login, String userName) {
+        this.userId = userId;
+        this.login = login;
+        this.userName = userName;
+    }
+
     public void setUserName(String userName) {
         this.userName = userName;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", login='" + login + '\'' +
+                ", userName='" + userName + '\'' +
+                '}';
     }
 }

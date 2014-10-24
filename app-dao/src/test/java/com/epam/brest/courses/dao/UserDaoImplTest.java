@@ -69,4 +69,12 @@ public class UserDaoImplTest {
         User user = userDao.getUserByLogin("userLogin2");
         assertNotNull(user);
     }
+
+    @Test
+    public void updateUser(){
+
+        User user = new User();
+
+
+    }
 }

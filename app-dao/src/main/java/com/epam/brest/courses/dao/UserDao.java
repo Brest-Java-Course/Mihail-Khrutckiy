@@ -16,4 +16,6 @@ public interface UserDao {
 
     public User getUserByLogin(String login);
 
+    public void updateUser(User user);
+
 }
