@@ -7,11 +7,6 @@ http://www.springframework.org/schema/beans/spring-beans.xsd
 http://www.springframework.org/schema/jdbc
 http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
-
-    <bean id="userService" class="com.epam.brest.courses.service.UserServiceImpl">
-        <property name="userService" ref="userService" />
-    </bean>
-
     <bean id="userDao" class="com.epam.brest.courses.dao.UserDaoImpl">
         <property name="dataSource" ref="dataSource" />
     </bean>

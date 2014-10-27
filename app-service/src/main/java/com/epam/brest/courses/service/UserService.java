@@ -13,7 +13,11 @@ public interface UserService {
 
     public User getUserByLogin(String login);
 
+    public List<User> getUsers();
+
+    public void deleteUser(Long id);
+
+    public void updateUser(Long id);
+
     //TODO log4j, del, get, update, tests...
-
-
 }

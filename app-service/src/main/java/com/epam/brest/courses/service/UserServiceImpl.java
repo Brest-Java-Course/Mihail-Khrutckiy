@@ -34,7 +34,7 @@ public class UserServiceImpl implements UserService {
             throw new IllegalArgumentException("User is present in DB");
         }
 
-
+        userDao.addUser(user);
     }
 
     @Override
@@ -43,12 +43,29 @@ public class UserServiceImpl implements UserService {
         User user = null;
         try{
             user = userDao.getUserByLogin(login);
-
         }
         catch (EmptyResultDataAccessException e){
             //TODO: add logger
-
         }
         return user;
+    }
+
+    @Override
+    public List<User> getUsers() {
+
+        List<User> users = userDao.getUsers();
+        Assert.notNull(users);
+        //Assert.isNull();
+        return users;
+    }
+
+    @Override
+    public void deleteUser(Long id) {
+
+    }
+
+    @Override
+    public void updateUser(Long id) {
+
     }
 }

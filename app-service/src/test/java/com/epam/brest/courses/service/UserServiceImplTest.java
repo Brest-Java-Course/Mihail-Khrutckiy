@@ -5,20 +5,27 @@ package com.epam.brest.courses.service;
  */
 
 import com.epam.brest.courses.domain.User;
+import org.easymock.internal.matchers.Null;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.transaction.TransactionConfiguration;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:/testServiceContextSpring.xml"})
+@ContextConfiguration(locations = {"classpath*:/spring-services-test.xml"})
+@TransactionConfiguration(transactionManager="transactionManager", defaultRollback=false)
+@Transactional
 public class UserServiceImplTest {
+
+    public static final String ADMIN = "admin";
 
     @Autowired
     private UserService userService;
@@ -44,19 +51,18 @@ public class UserServiceImplTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
-    public void testAddUserWithSameLogin() throws Exception{
+    public void testAddUserWithSameLogin() throws Exception {
 
-        userService.addUser(new User(null, "admin", "admin"));
-        userService.addUser(new User(null, "admin", "admin"));
+        userService.addUser(new User(null, ADMIN, ADMIN));
+        userService.addUser(new User(null, ADMIN, ADMIN));
     }
 
     @Test
     public void testAddUser() throws Exception{
 
-        userService.addUser(new User(null, "admin", "admin"));
+        userService.addUser(new User(null, ADMIN, ADMIN));
 
-        User user = userService.getUserByLogin("admin");
-        assertEquals("admin", user.getLogin());
+        User user = userService.getUserByLogin(ADMIN);
+        assertEquals(ADMIN, user.getLogin());
     }
-
 }
