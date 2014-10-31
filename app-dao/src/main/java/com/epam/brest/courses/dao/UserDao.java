@@ -6,6 +6,12 @@ import java.util.List;
 
 public interface UserDao {
 
+    /**
+     * Create new user.
+     *
+     * @param user
+     */
+
     public void addUser(User user);
 
     public List<User> getUsers();

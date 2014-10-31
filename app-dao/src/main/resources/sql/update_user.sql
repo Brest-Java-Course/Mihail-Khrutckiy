@@ -1,0 +1,1 @@
+update USER set login=:login, name=:name where userid=:userid

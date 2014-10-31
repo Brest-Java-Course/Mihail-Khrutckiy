@@ -36,9 +36,11 @@ public class UserDaoImplTest {
         List<User> users = userDao.getUsers();
         int sizeBefore = users.size();
         User user = new User();
-        user.setUserId(3L);
+
+        //user.setUserId(3L);
         user.setLogin("userLogin3");
         user.setUserName("userName3");
+
         userDao.addUser(user);
 
         users = userDao.getUsers();
@@ -73,8 +75,8 @@ public class UserDaoImplTest {
     @Test
     public void updateUser(){
 
-        User user = new User();
-
+        User user = new User(3L, "user", "user");
+        userDao.updateUser(user);
 
     }
 }
