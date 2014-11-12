@@ -39,7 +39,7 @@ public class UserDaoImplTest {
 
         //user.setUserId(3L);
         user.setLogin("userLogin3");
-        user.setUserName("userName3");
+        user.setName("userName3");
 
         userDao.addUser(user);
 
@@ -52,7 +52,7 @@ public class UserDaoImplTest {
 
         List<User> users = userDao.getUsers();
         int sizeBefore = users.size();
-        userDao.removeUser(1);
+        userDao.removeUser(1L);
         users = userDao.getUsers();
 
         assertEquals(sizeBefore, users.size() +1);

@@ -10,7 +10,7 @@ public class UserDataFixture {
     public static User getNewUser(){
 
         User user = new User();
-        user.setUserName("name");
+        user.setName("name");
         user.setLogin("login");
 
         return user;
@@ -20,7 +20,7 @@ public class UserDataFixture {
 
         User user = new User();
         user.setUserId(id);
-        user.setUserName("name");
+        user.setName("name");
         user.setLogin("login");
 
         return user;
